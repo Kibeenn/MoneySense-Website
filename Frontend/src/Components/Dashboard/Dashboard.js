@@ -20,7 +20,7 @@ function Dashboard() {
   useEffect(() => {
     getIncomes();
     getExpenses();
-  }, []);
+  }, [getExpenses, getIncomes]);
 
   return (
     <DashboardStyled>
