@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import kevin from "../../img/kevin.jpg";
 import { signout } from "../../utils/Icons";
