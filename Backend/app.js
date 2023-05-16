@@ -3,10 +3,13 @@ const cors = require("cors");
 const { db } = require("./db/db");
 const { readdirSync } = require("fs");
 const app = express();
-
 require("dotenv").config();
+const connection = require("./db");
+const userRoutes = require("./routes/users");
+const authRoutes = require("./routes/auth");
+const { User } = require("./models/user");
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 5000;
 
 //middlewares
 app.use(express.json());
@@ -25,3 +28,10 @@ const server = () => {
 };
 
 server();
+
+// database connection
+connection();
+
+// routes
+app.use("/api/users", userRoutes);
+app.use("/api/auth", authRoutes);

@@ -8,6 +8,11 @@ import Dashboard from "./Components/Dashboard/Dashboard";
 import Income from "./Components/Income/Income";
 import Expenses from "./Components/Expenses/Expenses";
 import { useGlobalContext } from "./context/globalContext";
+import { Route, Routes, Navigate } from "react-router-dom";
+import Main from "./Components/Main";
+import Signup from "./Components/Signup";
+import Login from "./Components/Login";
+import EmailVerify from "./Components/EmailVerify";
 
 function App() {
   const [active, setActive] = useState(1);
@@ -18,12 +23,24 @@ function App() {
   const displayData = () => {
     switch (active) {
       case 1:
-        return <Dashboard />;
+        const user = localStorage.getItem("token");
+
+        return (
+          <Routes>
+            {user && <Route path="/" exact element={<Dashboard />} />}
+            <Route path="/signup" exact element={<Signup />} />
+            <Route path="/login" exact element={<Login />} />
+            <Route path="/" element={<Navigate replace to="/login" />} />
+            <Route path="/users/:id/verify/:token" element={<EmailVerify />} />
+          </Routes>
+        );
       case 2:
         return <Dashboard />;
       case 3:
-        return <Income />;
+        return <Dashboard />;
       case 4:
+        return <Income />;
+      case 5:
         return <Expenses />;
       default:
         return <Dashboard />;

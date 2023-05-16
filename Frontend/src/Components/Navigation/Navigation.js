@@ -5,6 +5,11 @@ import { signout } from "../../utils/Icons";
 import { menuItems } from "../../utils/menuItems";
 
 function Navigation({ active, setActive }) {
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    window.location.reload();
+  };
+
   return (
     <NavStyled>
       <div className="user-con">
@@ -29,7 +34,7 @@ function Navigation({ active, setActive }) {
         })}
       </ul>
       <div className="bottom-nav">
-        <li>{signout} Sign Out</li>
+        <button onClick={handleLogout}>{signout} Sign Out</button>
       </div>
     </NavStyled>
   );
