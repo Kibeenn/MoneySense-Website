@@ -9,7 +9,6 @@ import Income from "./Components/Income/Income";
 import Expenses from "./Components/Expenses/Expenses";
 import { useGlobalContext } from "./context/globalContext";
 import { Route, Routes, Navigate } from "react-router-dom";
-import Main from "./Components/Main";
 import Signup from "./Components/Signup";
 import Login from "./Components/Login";
 import EmailVerify from "./Components/EmailVerify";
@@ -36,11 +35,11 @@ function App() {
         );
       case 2:
         return <Dashboard />;
+      //case 3:
+      //return <Dashboard />;
       case 3:
-        return <Dashboard />;
-      case 4:
         return <Income />;
-      case 5:
+      case 4:
         return <Expenses />;
       default:
         return <Dashboard />;
