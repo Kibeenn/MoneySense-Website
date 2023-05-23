@@ -40,7 +40,6 @@ function Navigation({ active, setActive }) {
             name={"Log out"}
             icon={logouticon}
             bPad={".8rem 1.6rem"}
-            bRad={"30px"}
             bg={"var(--primary-color"}
             color={"#fff"}
           />
