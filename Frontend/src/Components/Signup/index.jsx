@@ -2,8 +2,11 @@ import { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import styles from "./styles.module.css";
+import { eyeon, eyeoff } from "../../utils/Icons";
 
 const Signup = () => {
+  const [visible, setVisible] = useState();
+
   const [data, setData] = useState({
     firstName: "",
     lastName: "",
@@ -76,7 +79,7 @@ const Signup = () => {
               className={styles.input}
             />
             <input
-              type="password"
+              type={visible ? "text" : "password"}
               placeholder="Password"
               name="password"
               onChange={handleChange}
@@ -84,6 +87,9 @@ const Signup = () => {
               required
               className={styles.input}
             />
+            <div className="p-2" onClick={() => setVisible(!visible)}>
+              {visible ? eyeon : eyeoff}
+            </div>
             {error && <div className={styles.error_msg}>{error}</div>}
             {msg && <div className={styles.success_msg}>{msg}</div>}
             <button type="submit" className={styles.green_btn}>

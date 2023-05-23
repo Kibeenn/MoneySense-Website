@@ -2,10 +2,13 @@ import { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import styles from "./styles.module.css";
+import { eyeon, eyeoff } from "../../utils/Icons";
 
 const Login = () => {
   const [data, setData] = useState({ email: "", password: "" });
   const [error, setError] = useState("");
+
+  const [visible, setVisible] = useState();
 
   const handleChange = ({ currentTarget: input }) => {
     setData({ ...data, [input.name]: input.value });
@@ -45,7 +48,7 @@ const Login = () => {
               className={styles.input}
             />
             <input
-              type="password"
+              type={visible ? "text" : "password"}
               placeholder="Password"
               name="password"
               onChange={handleChange}
@@ -53,6 +56,12 @@ const Login = () => {
               required
               className={styles.input}
             />
+            <div className="p-2" onClick={() => setVisible(!visible)}>
+              {visible ? eyeon : eyeoff}
+            </div>
+            <Link to="/forgot-password" style={{ alignSelf: "flex-start" }}>
+              <p style={{ padding: "0 15px" }}>Forgot Password?</p>
+            </Link>
             {error && <div className={styles.error_msg}>{error}</div>}
             <button type="submit" className={styles.green_btn}>
               Sign In

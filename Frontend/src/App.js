@@ -12,6 +12,8 @@ import { Route, Routes, Navigate } from "react-router-dom";
 import Signup from "./Components/Signup";
 import Login from "./Components/Login";
 import EmailVerify from "./Components/EmailVerify";
+import ForgotPassword from "./Components/ForgotPassword";
+import PasswordReset from "./Components/PasswordReset";
 
 function App() {
   const [active, setActive] = useState(1);
@@ -31,6 +33,11 @@ function App() {
             <Route path="/login" exact element={<Login />} />
             <Route path="/" element={<Navigate replace to="/login" />} />
             <Route path="/users/:id/verify/:token" element={<EmailVerify />} />
+            <Route
+              path="/password-reset/:id/:token"
+              element={<PasswordReset />}
+            />
+            <Route path="/forgot-password" element={<ForgotPassword />} />
           </Routes>
         );
       case 2:
