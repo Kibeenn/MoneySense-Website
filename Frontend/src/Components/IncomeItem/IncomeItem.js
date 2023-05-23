@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { dateFormat } from "../../utils/dateFormat";
+import Button from "../Button/Button";
 import {
   bitcoin,
   book,
@@ -22,7 +23,6 @@ import {
   users,
   yt,
 } from "../../utils/Icons";
-import Button from "../Button/Button";
 
 function IncomeItem({
   id,
@@ -87,6 +87,7 @@ function IncomeItem({
     <IncomeItemStyled indicator={indicatorColor}>
       <div className="icon">
         {type === "expense" ? expenseCatIcon() : categoryIcon()}
+        {type === "income" ? expenseCatIcon() : categoryIcon()}
       </div>
       <div className="content">
         <h5>{title}</h5>

@@ -1,8 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import kevin from "../../img/kevin.jpg";
-import { signout } from "../../utils/Icons";
+import { logouticon, signout } from "../../utils/Icons";
 import { menuItems } from "../../utils/menuItems";
+import Button from "../Button/Button";
 
 function Navigation({ active, setActive }) {
   const handleLogout = () => {
@@ -34,7 +35,16 @@ function Navigation({ active, setActive }) {
         })}
       </ul>
       <div className="bottom-nav">
-        <button onClick={handleLogout}>{signout} Sign Out</button>
+        <button onClick={handleLogout}>
+          <Button
+            name={"Log out"}
+            icon={logouticon}
+            bPad={".8rem 1.6rem"}
+            bRad={"30px"}
+            bg={"var(--primary-color"}
+            color={"#fff"}
+          />
+        </button>
       </div>
     </NavStyled>
   );

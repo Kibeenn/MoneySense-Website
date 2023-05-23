@@ -59,7 +59,7 @@ function ExpenseForm() {
       <div className="input-control">
         <DatePicker
           id="date"
-          placeholderText="Enter A Date"
+          placeholderText="Enter a date"
           selected={date}
           dateFormat="dd/MM/yyyy"
           onChange={(date) => {
@@ -92,7 +92,7 @@ function ExpenseForm() {
         <textarea
           name="description"
           value={description}
-          placeholder="Add A Reference"
+          placeholder="Add a note"
           id="description"
           cols="30"
           rows="4"

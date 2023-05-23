@@ -27,6 +27,7 @@ export const food = <i className="fa-solid fa-bowl-food"></i>;
 export const medical = <i className="fa-solid fa-briefcase-medical"></i>;
 export const tv = <i className="fa-solid fa-tv"></i>;
 export const circle = <i className="fa-solid fa-circle-dot"></i>;
-export const other = <i class="fa-regular fa-ellipsis"></i>;
+export const other = <i class="fa-sharp fa-solid fa-ellipsis"></i>;
 export const eyeon = <i class="fa-solid fa-eye"></i>;
 export const eyeoff = <i class="fa-sharp fa-solid fa-eye-slash"></i>;
+export const logouticon = <i class="fa-solid fa-right-from-bracket"></i>;
