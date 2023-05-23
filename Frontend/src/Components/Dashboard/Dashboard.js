@@ -1,12 +1,14 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { useGlobalContext } from "../../context/globalContext";
 import History from "../../History/History";
-import { InnerLayout } from "../../styles/Layouts";
+import { InnerLayout, LoginLayout } from "../../styles/Layouts";
 import { peso } from "../../utils/Icons";
 import Chart from "../Chart/Chart";
+import Navigation from "../Navigation/Navigation";
 
 function Dashboard() {
+  const [active, setActive] = useState(1);
   const {
     totalExpenses,
     incomes,

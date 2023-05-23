@@ -4,6 +4,7 @@ const Token = require("../models/token");
 const crypto = require("crypto");
 const sendEmail = require("../utils/sendEmail");
 const bcrypt = require("bcrypt");
+require("dotenv").config;
 
 router.post("/", async (req, res) => {
   try {
