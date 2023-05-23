@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import kevin from "../../img/kevin.jpg";
-import { logouticon, signout } from "../../utils/Icons";
+import { logouticon } from "../../utils/Icons";
 import { menuItems } from "../../utils/menuItems";
 import Button from "../Button/Button";
 

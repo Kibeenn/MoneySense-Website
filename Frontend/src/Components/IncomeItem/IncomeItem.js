@@ -7,7 +7,6 @@ import {
   book,
   calender,
   card,
-  circle,
   clothing,
   comment,
   peso,
@@ -15,13 +14,13 @@ import {
   freelance,
   medical,
   money,
-  piggy,
   stocks,
   takeaway,
   trash,
   tv,
   users,
   yt,
+  other,
 } from "../../utils/Icons";
 
 function IncomeItem({
@@ -52,7 +51,7 @@ function IncomeItem({
       case "youtube":
         return yt;
       case "other":
-        return piggy;
+        return other;
       default:
         return "";
     }
@@ -74,8 +73,8 @@ function IncomeItem({
         return clothing;
       case "travelling":
         return freelance;
-      case "other":
-        return circle;
+      case "others":
+        return other;
       default:
         return "";
     }
