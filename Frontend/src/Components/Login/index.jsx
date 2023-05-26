@@ -37,7 +37,7 @@ const Login = () => {
       <div className={styles.login_form_container}>
         <div className={styles.left}>
           <form className={styles.form_container} onSubmit={handleSubmit}>
-            <h1>Login to Your Account</h1>
+            <h1 style={{ padding: "10px" }}>Login to Your Account</h1>
             <input
               type="email"
               placeholder="Email"
@@ -56,11 +56,12 @@ const Login = () => {
               required
               className={styles.input}
             />
-            <div className="p-2" onClick={() => setVisible(!visible)}>
+            <span className="p-2" onClick={() => setVisible(!visible)}>
               {visible ? eyeon : eyeoff}
-            </div>
-            <Link to="/forgot-password" style={{ alignSelf: "flex-start" }}>
-              <p style={{ padding: "0 15px" }}>Forgot Password?</p>
+            </span>
+
+            <Link to="/forgot-password" style={{ alignSelf: "flex-center" }}>
+              <h5 style={{ padding: "5px" }}>Forgot Password?</h5>
             </Link>
             {error && <div className={styles.error_msg}>{error}</div>}
             <button type="submit" className={styles.green_btn}>

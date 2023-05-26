@@ -21,6 +21,7 @@ const IncomeSchema = new mongoose.Schema(
     date: {
       type: Date,
       required: true,
+      maxLength: 20,
       trim: true,
     },
     category: {
